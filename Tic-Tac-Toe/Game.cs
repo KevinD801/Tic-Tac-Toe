@@ -59,9 +59,14 @@ namespace Tic_Tac_Toe
             _gameBoard.End();
         }
 
+        /// <summary>
+        /// Taking users choice
+        /// </summary>
+        /// <returns></returns>
         public static int GetInput()
         {
             int choice = -1;
+
             if (!int.TryParse(Console.ReadLine(), out choice))
             {
                 choice = -1;
