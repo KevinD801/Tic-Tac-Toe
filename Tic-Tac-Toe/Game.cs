@@ -73,5 +73,13 @@ namespace Tic_Tac_Toe
             }
             return choice;
         }
+
+        public static bool SetCurrentScene(int index)
+        {
+            if (index < 0 || index > _sceneCount)
+            {
+                return true;
+            }
+        }
     }
 }

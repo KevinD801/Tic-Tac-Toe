@@ -21,8 +21,13 @@ namespace Tic_Tac_Toe
             _player2Token = 'o';
             _currentToken = _player1Token;
 
-            _board = new char[3, 3] { { '1', '2', '3' },{ '4', '5', '6' },{ '7', '8', '9' } };
+            ClearBoard();
+        }
 
+        public void RestartGame()
+        {
+            Console.WriteLine("Restart? \n 1. Yes \n 2. No");
+            int choice = GetInput();
         }
 
         /// <summary>
@@ -33,6 +38,12 @@ namespace Tic_Tac_Toe
         /// </summary>
         public void Update()
         {
+            switch (_currentScene)
+            {
+                case 0:
+                    _gameBoard.Update();
+
+            }
             if (Game.GetInput() == 1)
             {
                 _board[0, 0] = _currentToken;
@@ -173,8 +184,7 @@ namespace Tic_Tac_Toe
         /// </summary>
         public void ClearBoard()
         {
-            Console.Clear();
-            Draw();
+            _board = new char[3, 3] { { '1', '2', '3' }, { '4', '5', '6' }, { '7', '8', '9' } };
         }
     }
 }
